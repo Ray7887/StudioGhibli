@@ -70,14 +70,102 @@ button:hover {
     transform: translateY(-10px);      /* sobe ao passar o mouse */
     box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* sombra mais forte */
 }
+         /* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d99d8;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* sombra elegante */
+}
+
+/* container interno do menu */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* lista do menu */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* links */
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+/* linha animada embaixo */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* hover */
+.menu a:hover::after {
+    width: 100%;
+}
+/* rolamento suave para âncoras */
+html { scroll-behavior: smooth; }
+
+/* evitar que o menu cubra os títulos quando rolando */
+h2 {
+    scroll-margin-top: 150px;
+}
 
 
   </style>
 </head>
-<body>
+<body id="top">
+  <nav class="menu">
+    <div class="menu-container">
+        <div class="logo">Studio Ghibli</div>
+        
 
-</head>
-<body>
+        <ul>
+             <li><a href="#1° Filme">1° Filme</a></li>
+            <li><a href="#2° Filme">2° Filme</a></li>
+            <li><a href="#3° Filme">3° Filme</a></li>
+            <li><a href="#4° Filme">4° Filme</a></li>
+            <li><a href="#5° Filme">5° Filme</a></li>
+            <li><a href="#6° Filme">6° Filme</a></li>
+            <li><a href="#7° Filme">7° Filme</a></li>
+            <li><a href="#8° Filme">8° Filme</a></li>
+            <li><a href="#9° Filme">9° Filme</a></li>
+        </ul>
+    </div>
+</nav>
+
+
 <h1 style = "color:rgb(255, 110, 146);font-size: 36px;" align="center">
     Os 9 filmes mais famosos do Studio Ghibli
 <P><img src="https://sucodemanga.com.br/wp-content/uploads/2022/03/Studio-Ghibli-Logo-1024x575.jpg" width="" align="center" alt="html"></P></h1>
@@ -87,7 +175,7 @@ button:hover {
  <div class="card">
     <img src="https://www.themoviedb.org/t/p/original/hhoKhsyJ3hFaxEm5pMdZRiTu2lJ.jpg" alt="Chihiro" width="300" height="auto">
     <div class="card-text">
-    <h2 style = "color:rgb(247, 251, 255);"></h2style>1° Filme</h2>
+    <h2 style = "color:rgb(247, 251, 255);" id="1° Filme">1° Filme</h2>
     <h1 style = "color:rgb(255, 110, 146);"> A Viagem de Chihiro 2001</h1> 
     <p style = "color:rgb(5, 24, 43);font-size:20px;"> 
       O filme escrito, desenhado e dirigido por Hayao Miyazaki,tem como protagonista Chihiro,<br>
@@ -118,7 +206,7 @@ button:hover {
  <div class="card">
 <img src="https://tse4.mm.bing.net/th/id/OIP.7RemVyQd6uwb9LuuRSWROQHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Túmulo dos Vagalumes" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>2° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="2° Filme">2° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);"> Túmulo dos Vagalumes 1988</h1> 
      <p style = "color:rgb(5, 24, 43);font-size:20px;"> O filme dirigido por Isao Takahata, é uma das obras mais poderosas e emocionalmente<br> devastadoras do Studio Ghibli.
         A trama baseia-se no romance semi-biográfico de Akiyuki Nosaka.<br>
@@ -152,7 +240,7 @@ button:hover {
  <div class="card">
 <img src="https://static3.moviehub.com.br/fotos/filmes/poster/8559_medio.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>3° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="3° Filme">3° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);"> Meu Amigo Totoro 1988</h1> 
     <p style = "color:rgb(5, 24, 43);font-size:20px;">O terceiro longa do Studio Ghibli tornou-se rapidamente um dos símbolos do estúdio. <br>
            A trama acompanha Satsuki e Mei, duas irmãs que se mudam com o pai para o interior,<br>
@@ -188,7 +276,7 @@ button:hover {
 <div class="card">
 <img src="https://image.tmdb.org/t/p/original/58LcltHMRBICiavCzpAcI2YQvhQ.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>4° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="4° Filme">4° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);">  Princesa Mononoke 1997</h1>
     <p style = "color:rgb(5, 24, 43);font-size:20px;">O longa conta a jornada de Ashitaka, um príncipe amaldiçoado por uma doença mortal<br>
                  que parte em busca de uma cura no leste. No caminho, ele se vê no centro de um conflito entre animais da floresta e os humanos que exploram seus recursos,<br>
@@ -220,7 +308,7 @@ button:hover {
 <div class="card">
 <img src="https://image.tmdb.org/t/p/original/dHddCEVbh7rz02MawaxRqBMpvC9.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>5° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="5° Filme">5° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);">  O Castelo Animado 2004</h1>
              <p style = "color:rgb(5, 24, 43);font-size:20px;">A trama acompanha Sophie, uma jovem modesta e insegura, amaldiçoada por uma bruxa a viver no corpo de uma idosa,<br>
                  permitindo que em sua jornada alcance coragem e libertação. Ao lado de Howl, o feiticeiro que habita um castelo errante e misterioso,<br>
@@ -257,7 +345,7 @@ button:hover {
 <div class="card">
 <img src="https://media.themoviedb.org/t/p/w500/ts1oKmmSr2tM9qmzDUNzMWs9EDq.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>6° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="6° Filme">6° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);"> Porco Rosso: O Último Herói Romântico 1992</h1>
 
                <p style = "color:rgb(5, 24, 43);font-size:20px;"> Lançado em 1992 pelo Studio Ghibli, Porco Rosso é um dos filmes mais singulares da obra de Hayao Miyazaki.<br>
@@ -293,7 +381,7 @@ button:hover {
 <div class="card">
 <img src="https://images.justwatch.com/poster/257194480/s718/o-conto-da-princesa-kaguya.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>7° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="7° Filme">7° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);">O Conto da Princesa Kaguya 1997</h1>
 
                   <p style = "color:rgb(5, 24, 43);font-size:20px;"> Esta animação é baseada no popular conto japonês “O Conto do Cortador de Bambu”.<br>
@@ -331,7 +419,7 @@ button:hover {
 <div class="card">
 <img src="https://images.justwatch.com/poster/265228839/s718/pompoko-a-grande-batalha-dos-guaxinins.%7Bformat%7D" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>8° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="8° Filme">8° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);">Pom Poko: A Grande Batalha dos Guaxinins 1994</h1>
 
                      <p style = "color:rgb(5, 24, 43);font-size:20px;"> Pom Poko – A Grande Batalha dos Guaxinins é o oitavo longa-metragem de <br>
@@ -369,7 +457,7 @@ button:hover {
 <div class="card">
 <img src="https://s2-quem.glbimg.com/fTu3hlT9y7ADSAfjqaWG89nGKWc=/0x0:1400x2001/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/r/l/YAE6UETp28OU2vpYDFMg/mi2.jpg" alt="html" width="300" height="auto">
 <div class="card-text">
-<h2 style = "color:rgb(247, 251, 255);"></h2style>9° Filme</h2>
+<h2 style = "color:rgb(247, 251, 255);" id="9° Filme">9° Filme</h2>
 <h1 style = "color:rgb(255, 110, 146);">O Menino e a Garça 2024</h1>
 
                        <p style = "color:rgb(5, 24, 43);font-size:20px;">Abordagens sobre o universo infantil e suas dificuldades nunca foram um grande desafio nas obras<br>
@@ -415,3 +503,4 @@ button:hover {
 </body>
 
 </html>
+
