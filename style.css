@@ -1,0 +1,241 @@
+body {
+      background-color: lightblue;
+      animation: aparecer 1.5s ease forwards;
+    }
+
+    /*container ajeitar texto */
+    .card .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    }
+
+    /*container para cada par imagem + texto */
+    .card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    /*Configurações de imgem*/
+    img {
+      border-radius: 8px;
+    }
+
+    /*Configurações de imgem*/
+    img {
+      border-radius: 8px;
+    }
+    h1 {
+      animation: aparecer 1.5s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     button {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #84C1FA;
+ 
+}
+.button:hover {
+    transform: translateY(-10px);      /* sobe ao passar o mouse */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* sombra mais forte */}
+   
+
+    .card {
+    background: linear-gradient(135deg, #6fd2f0, #acb6e5); /* degradê moderno */
+    border-radius: 15px;       /* cantos arredondados */
+    padding: 20px;             /* espaço interno */
+    margin: 20px 0;            /* espaço entre os cards */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);      /* sobe ao passar o mouse */
+    box-shadow: 0 15px 25px rgba(87, 155, 245, 0.2); /* sombra mais forte */
+}
+/* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d99d8;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* sombra elegante */
+}
+
+/* container interno do menu */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* logo */
+.logo {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* lista do menu */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* links */
+.menu a {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+/* linha animada embaixo */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(252, 252, 252);
+    transition: width 0.3s ease;
+}
+
+/* hover */
+.menu a:hover::after {
+    width: 100%;
+}
+/* rolamento suave para âncoras */
+html { scroll-behavior: smooth; }
+
+/* evitar que o menu cubra os títulos quando rolando */
+h2 {
+    scroll-margin-top: 150px;
+}
+
+/* Forçar alinhamento à esquerda para títulos e parágrafos */
+h1, h2, p {
+  text-align: left;
+  margin-left: 0;
+}
+/* ===== MENU TOPO ===== */
+.menu-topo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4d99d8;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-topo ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-topo a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ===== BOTÃO MENU ===== */
+.btn-menu {
+  position: fixed;
+  top: 15px;
+  right: 20px; /* direita */
+  background: #4d99d8;
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 2000;
+  border-radius: 5px;
+}
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: 0; /* fixa na direita */
+  height: 100vh;
+  width: 250px;
+  background: #4d99d8;
+  padding-top: 80px;
+  transform: translateX(100%); /* começa escondido para a direita */
+  transition: transform 0.3s ease;
+  z-index: 1500;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
+
+.menu-lateral a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu-lateral a:hover {
+  color: #db4b93;
+}
+
+/* ===== MENU ABERTO ===== */
+.menu-lateral.ativo {
+  transform: translateX(0);
+}
+
+/* ===== AJUSTE DO CONTEÚDO ===== */
+/* ===== AJUSTE DO CONTEÚDO ===== */
+/* garantir espaço abaixo do menu fixo para o conteúdo */
+body {
+  margin: 0;
+  padding-top: 80px; /* ajusta a posição inicial dos cards abaixo do menu */
+}
+
+section {
+  padding-top: 100px; /* espaço por causa do menu topo */
+}
